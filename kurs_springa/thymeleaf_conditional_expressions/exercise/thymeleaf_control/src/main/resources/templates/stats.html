@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Statystyki tekstu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Statystyki wprowadzonego tekstu</h1>
+
+<p th:if="${text.length ne 0}">
+    <span th:text="'Długość tekstu: ' + ${text.length}">Długość tekstu: 00</span>
+</p>
+
+<p th:if="${text.wordsNumber ne 0}">
+    <span th:text="'Liczba słów: ' + ${text.wordsNumber}">Liczba słów: 00</span>
+</p>
+
+
+<p th:if="${text.palindrome ne 0}">
+    <span th:text="'Tekst ' + ${text.palindrome eq 1? 'jest palindromem' : 'nie jest palindromem'}">Tekst jest palindromem lub nie</span>
+</p>
+
+
+<p th:if="${text.mostPopularWord ne null}">
+
+    <span th:text="'Najpopularniejszy wyraz to '
+    + ${text.mostPopularWord}
+    + ', liczba wystąpień: '
+    + ${text.mostPopularWordNum}">Najpopularniejsze słowo to bąbelki, liczba wystąpień: -1
+    </span>
+</p>
+
+
+<p>Twój tekst:</p>
+<p th:text="${text.text}">Twój tekst: </p>
+</body>
+</html>

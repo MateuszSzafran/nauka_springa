@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<head layout:fragment="head">
+    <title th:text="${product.name}">
+        Testowy produkt
+    </title>
+</head>
+
+<body>
+
+<main th:object="${product}" layout:fragment="content">
+    <h2>Informacje o produkcie</h2>
+    <p th:text="|Nazwa: *{name}|">Nazwa produktu</p>
+    <p>
+        <i class="fas fa-tv fa-10x product-icon" th:class="|fas fa-10x product-icon fa-${product.icon}|"></i>
+    </p>
+    <p th:text="|Cena: *{price} zł|">1 zł</p>
+    <p th:text="|Opis: *{description}|">Opis produktu</p>
+</main>
+
+</body>
+</html>

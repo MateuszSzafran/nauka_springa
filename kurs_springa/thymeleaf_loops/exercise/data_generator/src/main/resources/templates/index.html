@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator danych</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Generator danych</h1>
+<h2>nowy nagłówek</h2>
+<form action="/generate-data" method="post">
+    <fieldset>
+        <div>
+            <label for="dataNumber">Ile danych chcesz wygenerować?</label>
+            <input required type="number" name="dataNumber" id="dataNumber">
+        </div>
+        <div>
+            <label for="language">Język generowanych danych</label>
+            <select required name="language" id="language" >
+                <option th:each="language: ${languages}" th:text="${language}" th:value="${language.sign}">
+
+                </option>
+            </select>
+        </div>
+    </fieldset>
+    <fieldset>
+        <p>Co chcesz wygenerować?</p>
+        <label>Imię
+            <input type="checkbox" name="firstname">
+        </label>
+        <label>Nazwisko
+            <input type="checkbox" name="lastname">
+        </label>
+        <label>Uczelnia
+            <input type="checkbox" name="university">
+        </label>
+        <label>Kraj pochodzenia
+            <input type="checkbox" name="country">
+        </label>
+    </fieldset>
+    <button type="submit">Generuj dane</button>
+</form>
+</body>
+</html>

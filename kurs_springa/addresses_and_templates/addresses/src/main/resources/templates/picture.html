@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${picture.title}">Przykładowy tytuł</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${picture.title}">Tytuł obrazka</h1>
+    <img th:src="@{|/images/${picture.fileName}|}" th:alt="${picture.title}" class="picture">
+    <p th:text="${picture.title}">Opis obrazka</p>
+    <a th:href="@{/}">Wróć do strony głównej</a>
+</div>
+</body>
+</html>

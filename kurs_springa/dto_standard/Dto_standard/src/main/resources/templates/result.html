@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Details</title>
+</head>
+
+<body>
+<h1>Price details</h1>
+<p th:text="'Net price: ' + ${vat.nettoPrice}">Net price: 100</p>
+<p th:text="'Vat rate: ' + ${vat.vatRate}">Vat rate: 100</p>
+<p th:text="'Gross price: ' + ${vat.grossPrice}">Gross price: 100</p>
+</body>
+</html>

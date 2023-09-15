@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista pracowników</title>
+    <link rel="stylesheet" href="../static/styles/style.css" th:href="@{/styles/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Lista pracowników</h1>
+    <p th:text="|Średnia wypłata: ${avgSalary}|">Średnia wypłata: 0000 zł</p>
+    <table>
+        <thead>
+            <tr class="evenRow">
+                <th>Id</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Wypłata</th>
+            </tr>
+        </thead>
+        <tbody th:remove="all-but-first">
+            <tr th:each="employee, status: ${employees}"
+                th:object="${employee}"
+                class="evenRow"
+                th:class="${status.even? 'evenRow':''}"
+            >
+                <td th:text="*{id}">1</td>
+                <td th:text="*{firstName}">Jan</td>
+                <td th:text="*{lastName}">Kowalski</td>
+                <td th:text="|*{salary} zł|"
+                    class="belowAvgSalary"
+                    th:class="${employee.salary ge avgSalary? 'aboveAvgSalary': 'belowAvgSalary'}"
+                >0000 zł</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Jan</td>
+                <td>Kowalski</td>
+                <td class="aboveAvgSalary">9999 zł</td>
+            </tr>
+            <tr class="evenRow">
+                <td>1</td>
+                <td>Jan</td>
+                <td>Kowalski</td>
+                <td class="belowAvgSalary">0000 zł</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

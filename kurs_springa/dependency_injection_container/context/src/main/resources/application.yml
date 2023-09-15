@@ -1,0 +1,6 @@
+app:
+  printer:
+    decorator: UPPERCASE
+spring:
+  profiles:
+    active: console

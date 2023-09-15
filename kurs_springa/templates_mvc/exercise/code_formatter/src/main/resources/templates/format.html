@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeFormatter-result</title>
+    <link rel="stylesheet" href="format-styles.css">
+</head>
+<body>
+<h1>Wynik formatowania</h1>
+<div class="main-content">
+    <div class="code-with-label">
+        <p>Kod przed formatowaniem</p>
+        <pre th:text="${sourceCode}" class="code"></pre>
+    </div>
+    <div class="code-with-label">
+        <p>Kod zgodny z Google Style Guide</p>
+        <pre th:text="${formattedCode}" class="code"></pre>
+    </div>
+</div>
+</body>
+</html>

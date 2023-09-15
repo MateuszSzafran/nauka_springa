@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+table, td, th{
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+}
+table{
+    width: 100%;
+
+}

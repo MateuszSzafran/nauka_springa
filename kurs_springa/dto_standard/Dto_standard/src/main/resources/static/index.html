@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Vat Calculator</title>
+</head>
+<body>
+<h1>VAT Calculator</h1>
+<form action="/calculate" method="post">
+    <div>
+        <label>
+            Netto Price:
+            <input type="number" name="nettoPrice" step="0.01">
+        </label>
+    </div>
+    <div>
+        <label>
+            Category:
+            <select name="category">
+                <option value="food">Food</option>
+                <option value="services">Services</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+    </div>
+    <button type="submit">Calculate Vat and Brutto price</button>
+</form>
+</body>
+</html>

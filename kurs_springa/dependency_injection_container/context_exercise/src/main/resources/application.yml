@@ -1,0 +1,9 @@
+spring:
+  banner:
+    location: logo-app.txt
+  profiles:
+    active: noTextFormat, prod
+
+app:
+  fileName: data.csv
+  testWordsNumber: 4

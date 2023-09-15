@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pętle</title>
+</head>
+<body>
+    <h1>Lista osób</h1>
+    <ul>
+        <li th:each="person, status: ${people}">
+            <span th:text="${status.count} + '/' + ${status.size}">0/0</span>&nbsp;
+            <span th:text="'Imię: ' + ${person.firstName}">Imię: Andrzej</span>
+            <span th:text="'Nazwisko: ' + ${person.lastName}">Nazwisko: Dragan</span>
+        </li>
+    </ul>
+
+    <ul>
+        <li th:each="num: ${#numbers.sequence(1,numberek)}" th:text="'element nr ' + ${num}">
+        </li>
+    </ul>
+
+</body>
+</html>

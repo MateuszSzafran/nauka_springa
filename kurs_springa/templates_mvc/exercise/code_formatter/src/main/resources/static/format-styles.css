@@ -1,0 +1,14 @@
+.main-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+}
+.code{
+    border-color: black;
+    border-style: dashed;
+    border-width: thin;
+    margin: 20px;
+}

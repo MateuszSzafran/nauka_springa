@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate number</title>
+</head>
+<body>
+    <h1>Numbers generator</h1>
+    <h2 th:text="'Generated number: ' + ${number}"></h2>
+    <p>
+        Number was generated from range:
+        <span th:text="${from}"></span> <span th:text="${to}"></span>
+    </p>
+</body>
+</html>
